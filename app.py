@@ -13,8 +13,8 @@ import streamlit as st
 import time
 #import shap
 #import matplotlib as mt
-from jinja2 import Template
-import seaborn as sns
+#from jinja2 import Template
+#import seaborn as sns
 
 
 def train(data=None,problem="Regression",model="LinearRegression",label=None):
@@ -285,12 +285,12 @@ if st.button("Train"):
             Values of R2 outside the range 0 to 1 occur when the model fits the data worse than the worst possible least-squares predictor (equivalent to a horizontal hyperplane at a height equal to the mean of the observed data). This occurs when a wrong model was chosen, or nonsensical constraints were applied by mistake.
         '''
         
-        reg_temp = Template(reg)
-        teamplate = reg_temp.render(problem_type=prob_type,algo=model,target=y,r2_score=evaluate(y_train,y_hat_train))
-        print(teamplate)
-        with open("Regression Report.pdf","w") as f:
-            f.write(teamplate)
-            f.close()
+        #reg_temp = Template(reg)
+        #teamplate = reg_temp.render(problem_type=prob_type,algo=model,target=y,r2_score=evaluate(y_train,y_hat_train))
+        #print(teamplate)
+        #with open("Regression Report.pdf","w") as f:
+        #    f.write(teamplate)
+        #    f.close()
         
         st.success("Your task is completed. Have a nice Day!",icon="✅")
         time.sleep(1)
